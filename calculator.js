@@ -47,13 +47,9 @@
                     $('#result').html("Better get on a plane. There are no roads between "  + origin + " and " + destination);
                  }
                  else {
-
-										console.log(response.rows[0].elements[0].distance);
-										console.log( google.maps.DistanceMatrixStatus.OK);
 										const distance = response.rows[0].elements[0].distance.text;
                     const r = distance.replace("mi", "");
                     const x = r.replace(",","");
-
 										const cost_x = x*1.5; //parses argument and returns only integer
 										const cost_xl = x*2.5;//parses argument and returns only integer
 										const cost_lux = x*3.5;//parses argument and returns only integer
