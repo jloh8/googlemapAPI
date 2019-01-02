@@ -1,0 +1,33 @@
+#map {
+   height: 80%;
+   position: relative;
+
+ }
+ html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+#result{
+  display: none;
+}
+
+/* input#from_places.form-control{
+  width: 40%;
+}
+input#to_places.form-control{
+  width: 40%;
+}
+
+
+ul.list{
+  width: 40%;
+} */
+@media(min-width: 765px) {
+
+div.col-md-3{
+  width: 40%;
+}
+
+}
