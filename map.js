@@ -14,35 +14,31 @@ function initMap() {
 
 
 
+//display route onto map
+      function onChangeHandler() {
+               calculateAndDisplayRoute(directionsService, directionsDisplay);
+              directionsDisplay.setMap(map);
+             }
 
-        directionsDisplay.setMap(map);
-         var onChangeHandler = function() {
-          calculateAndDisplayRoute(directionsService, directionsDisplay);
-        };
 
-        document.getElementById('distance_form').addEventListener('submit', onChangeHandler);
+      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+          directionsService.route({
+          origin: document.getElementById('origin').value,
+          destination: document.getElementById('destination').value,
+          travelMode: 'DRIVING'
+              }, function(response, status) {
+                  if (status === 'OK') {
+                  directionsDisplay.setDirections(response);
+                  }
+                    else {
+                   window.alert('Directions request failed due to ' + status);
+                 }
 
+               });
+             }
+
+
+//display route on map when submit button is initiated
+    document.getElementById('distance_form').addEventListener('submit', onChangeHandler);
 
       }
-
-
-
-
-
-
-
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-    directionsService.route({
-    origin: document.getElementById('origin').value,
-    destination: document.getElementById('destination').value,
-    travelMode: 'DRIVING'
-        }, function(response, status) {
-            if (status === 'OK') {
-            directionsDisplay.setDirections(response);
-            }
-              else {
-             window.alert('Directions request failed due to ' + status);
-           }
-
-         });
-       }
