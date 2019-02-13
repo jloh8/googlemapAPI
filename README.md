@@ -1,5 +1,6 @@
-# googlemapAPI
-javascript api
+# Project Title
+Building WebAapp with Googlemap API 
 
-#about
-Web application similar to UBER "get price estimate" service
+
+# About
+Web application similar to UBER "Fare_Estimator" service using the googlemap API (Autocomplete Widget, Distance matrix services, and direction services) 
