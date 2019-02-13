@@ -16,4 +16,4 @@ Web application similar to UBER "Fare_Estimator" service using the googlemap jav
 
 ## googlemap API
 
-        ![alt text](googlemapAPI/googlemap_GetPriceEstimate.JPG)
+![alt text](http://url/to/googlemapAPI/googlemap_GetPriceEstimate.JPG)
