@@ -40,7 +40,7 @@ are generated in the 'Credentials' page of the 'APIs & Services' tab of [Google 
 This example uses the Geocoding API and the Directions API with an API key:
 
 ```Javascript
-// Targetting id, returning place predictions in response to an HTTP request made by user.
+// Target id name origin & destination, returning place predictions in response to an HTTP request made by user.
 google.maps.event.addListener(from_places, 'place_changed', function () {
             var from_place = from_places.getPlace();
             var from_address = from_place.formatted_address;
