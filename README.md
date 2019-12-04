@@ -1,17 +1,9 @@
-Google Map APIs
-===============
-
-
-# Project Title
-The goal of this project is to build a replica of UBER shareride web application with a few APIs that googlemap offers.  
-
-
 # About
 A complete Web application similar to UBER's "Fare_Estimator" service using the googlemap javascript API (Autocomplete Widget, Distance matrix services, and direction services)
 
 ## Description
 
-this project requires a google account to generate an API key.  
+This project requires a google account to generate an API key.  
 
 Keep in mind that the same [terms and conditions](https://developers.google.com/maps/terms) apply
 to usage of the APIs when they're accessed through this library.
@@ -21,7 +13,6 @@ to usage of the APIs when they're accessed through this library.
  - A Googlemap API key.
 
 ## Enable API key
-
 Each Google Maps Web Service request requires an API key or client ID. API keys
 are generated in the 'Credentials' page of the 'APIs & Services' tab of [Google Cloud console](https://console.cloud.google.com/apis/credentials).
 
@@ -30,11 +21,12 @@ Check to enable:
  - Distance Matrix API
  - Places API
 
+Include  ```Javascript <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+  type="text/javascript"></script>``` in HTML <head>.
+
 ## Usage (calculator.js)
 
-This example uses the Place, Distance Matrix and Directions API with an API key:
-
--Target id name origin & destination, returning place predictions in response to an HTTP request made by user.
+-Target id "origin" & "destination", returning place predictions in response to an HTTP request made by user.
 ```Javascript
 google.maps.event.addListener(from_places, 'place_changed', function () {
             var from_place = from_places.getPlace();
@@ -48,7 +40,7 @@ google.maps.event.addListener(from_places, 'place_changed', function () {
             $('#destination').val(to_address);
         });
 ```
--Access the Distance Matrix service via the google.maps.DistanceMatrixService constructor object.
+-Access the Distance Matrix service via the DistanceMatrixService constructor object.
 ```Javascript
 
       function calculateDistance() {
@@ -56,7 +48,7 @@ google.maps.event.addListener(from_places, 'place_changed', function () {
           var destination = $('#destination').val();
           var service = new google.maps.DistanceMatrixService();
 ```
--Service.getDistanceMatrix method initiates a request to the Distance Matrix service, passing it a DistanceMatrixRequest object literal containing the origins, destinations, and travel mode, as well as a callback method to execute upon receipt of the response.
+-getDistanceMatrix method initiates a request to the Distance Matrix service, passing it a DistanceMatrixRequest object literal containing the origins, destinations, and travel mode, as well as a callback method to execute upon receipt of the response.
 
 ```Javascript
 
@@ -74,7 +66,7 @@ google.maps.event.addListener(from_places, 'place_changed', function () {
       }
 
 ```
--Error checking, if addresses typed outside of U.S, an error message will pop up otherwise calculate distance for 3 different service tier (x,xl and lux)
+-Callback function checks for error i.e. addresses typed outside of U.S, an error message will pop up.  Calculate distance for 3 service tier (x,xl and lux)
 
 ```Javascript
 function callback(response, status) {
@@ -181,6 +173,6 @@ function initMap() {
 
 
 
->### googlemap version
+>### Googlemap version
 
 ![googlemap_getpriceestimate](https://user-images.githubusercontent.com/40499312/52683743-68255900-2f09-11e9-960e-dbd3008c26e0.JPG)
